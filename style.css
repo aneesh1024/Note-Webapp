@@ -1,0 +1,136 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: black;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  width: 100vw;
+  height: 100%;
+}
+
+.notes-head {
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 3rem;
+  margin: 0 auto;
+  width: 40%;
+  text-align: center;
+}
+
+.notes-body {
+  width: 90vw;
+  background: #222;
+  margin: 2rem auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.add-more {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.add-more svg path {
+  transition: 0.2s;
+  fill: rgb(68, 118, 255);
+}
+
+.add-more:hover svg path {
+  fill: white;
+}
+
+.note {
+  width: 80%;
+  margin: 0 auto;
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #5d2c85;
+  border-radius: 1rem;
+}
+
+.notes-body .note textarea {
+  width: 97%;
+  height: 70%;
+  background: #574aa3;
+  color: white;
+  border-radius: 1rem;
+  resize: none;
+  border: solid 4px #561a86;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea:active,
+textarea:focus {
+  outline: none;
+}
+
+.notes-content {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 96%;
+  height: 100%;
+  background: #574aa3;
+  color: white;
+  border-radius: 1rem;
+  resize: none;
+  border: solid 4px #561a86;
+  padding: 10px;
+  font-size: 1.2rem;
+  display: none;
+}
+
+.btn {
+  border: none;
+  background: #574aa3;
+  font-size: 1.5rem;
+  padding: 7px 15px;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: white;
+  color: #574aa3;
+}
+
+/* Animations */
+[data-inviewport="scale-in"] {
+  transition: 2s;
+  opacity: 0;
+  transform: scale(0.1);
+}
+[data-inviewport="scale-in"].is-inViewport {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* keyframes */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    scale: 0.2;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
